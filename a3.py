@@ -98,9 +98,13 @@ def title_after_year(matches: List[str]) -> List[str]:
         a list of movie titles made after the passed in year, exclusive (meaning if you
         pass in 1992 you won't get any movies made that year, only after)
     """
-    pass
-
-
+    year = int (matches[0])
+    result = []
+    for movie in movie_db:
+        if get_year(movie) == year:
+            result.append(get_title(movie))
+    return result
+            
 def director_by_title(matches: List[str]) -> List[str]:
     """Finds director of movie based on title
 
