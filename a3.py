@@ -211,7 +211,7 @@ def title_by_actor(matches: List[str]) -> List[str]:
             result.append(get_title(movie))
     return result
 
-def director_by_actor(matches: List[str]) -> List[str]:
+def director_by_actors(matches: List[str]) -> List[str]:
     result = []
     actor = matches[0]
     for movie in movie_db:
@@ -255,7 +255,17 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    pass
+    print(f"Searching: (src)")
+
+    for pat,act in pa_list:
+        mat = match(pat, src)
+        print(f"Pattern: {pat}, Match: {mat}")
+
+        if mat is not None:
+            answer = act(mat)
+            print(f"Answer: {answer}")
+            return answer if answer else ["No Answers"]
+    return["I dont understand"]
 
 
 def query_loop() -> None:
@@ -297,7 +307,7 @@ if __name__ == "__main__":
     ), "failed title_before_year test"
     assert isinstance(title_after_year(["1990"]), list), "title_after_year not returning a list"
     assert sorted(title_after_year(["1990"])) == sorted(
-        ["boyz n the hood", "dead again", "the crying game", "flirting", "malcolm x"]
+        ["boyz n the hood", "dead again", "the crying game", "flirting", "malcolm x", "f1"]
     ), "failed title_after_year test"
     assert isinstance(director_by_title(["jaws"]), list), "director_by_title not returning a list"
     assert sorted(director_by_title(["jaws"])) == sorted(
@@ -337,5 +347,9 @@ if __name__ == "__main__":
     assert sorted(
         search_pa_list(["what", "movies", "were", "made", "in", "2020"])
     ) == sorted(["No answers"]), "failed search_pa_list test 3"
+    assert isinstance(director_by_actors(["brad pitt", "kerry condon", "damson idris", "lewis hamilton", "javier bardem",]), list), "director_by_actors not returning a list"
+    assert sorted(director_by_actors(["brad pitt", "kerry condon", "damson idris", "lewis hamilton", "javier bardem"])) == sorted(
+        ["joseph kosinski"]
+    ), "failed director_by_actors test"
 
     print("All tests passed!")
