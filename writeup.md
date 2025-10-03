@@ -19,6 +19,7 @@ This assignment completes our movie chatbot system by implementing action functi
 
 
 2. How does the overall movie chatbot system work? Explain the flow from when a user types a query to when they receive an answer.
+Basically how the movie chatbot system work by having a matching system where it matches the words it already knows, and then the _s and the %s are the prompts the user sends to the chatbot and the chatbot goes through a database to find what the user's 
 
 
 
