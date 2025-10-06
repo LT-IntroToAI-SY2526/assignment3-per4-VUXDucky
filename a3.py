@@ -215,8 +215,9 @@ def director_by_actors(matches: List[str]) -> List[str]:
     result = []
     actor = matches[0]
     for movie in movie_db:
-        if actor in get_actors(movie):
-            result.append(get_title(movie))
+        if actor == get_actors(movie):
+            result.append(get_director(movie))
+    print(result)
     return result
 
 # dummy argument is ignored and doesn't matter
@@ -261,8 +262,8 @@ def search_pa_list(src: List[str]) -> List[str]:
 
         if mat is not None:
             answer = act(mat)
-            return answer if answer else ["No Answers"]
-    return["I dont understand"]
+            return answer if answer else ["No answers"]
+    return["I don't understand"]
 
 
 def query_loop() -> None:
@@ -335,9 +336,9 @@ if __name__ == "__main__":
     ), "failed title_by_actor test"
     
     
-    #assert sorted(search_pa_list(["hi", "there"])) == sorted(
-     #   ["I don't understand"]
-    #), "failed search_pa_list test 1"
+    assert sorted(search_pa_list(["hi", "there"])) == sorted(
+        ["I don't understand"]
+    ), "failed search_pa_list test 1"
     assert sorted(search_pa_list(["who", "directed", "jaws"])) == sorted(
         ["steven spielberg"]
     ), "failed search_pa_list test 2"
@@ -345,7 +346,7 @@ if __name__ == "__main__":
         search_pa_list(["what", "movies", "were", "made", "in", "2020"])
     ) == sorted(["No answers"]), "failed search_pa_list test 3"
     assert isinstance(director_by_actors(["brad pitt", "kerry condon", "damson idris", "lewis hamilton", "javier bardem",]), list), "director_by_actors not returning a list"
-    assert sorted(director_by_actors(["brad pitt", "kerry condon", "damson idris", "lewis hamilton", "javier bardem"])) == sorted(
+    assert sorted(director_by_actors([["brad pitt", "kerry condon", "damson idris", "lewis hamilton", "javier bardem"]])) == sorted(
         ["joseph kosinski"]
     ), "failed director_by_actors test"
 

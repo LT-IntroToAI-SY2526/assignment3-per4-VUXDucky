@@ -15,6 +15,7 @@ This assignment completes our movie chatbot system by implementing action functi
 ## Reflection Questions
 
 1. What are some key programming concepts or techniques that you learned while completing this assignment?
+Some key programming concepts I learned while completing this assignment by learning how to add more movies or information to a database and how patterns and sources work together.
 
 
 
@@ -24,3 +25,4 @@ Basically how the movie chatbot system work by having a matching system where it
 
 
 3. What are some real-world applications where this type of pattern-matching chatbot system could be useful? How might you extend or improve this system for practical use?
+One real world applications where this pattern-matching chatbot can be useful is possibly with ordering food on a kiosk for example asking the robot what are nutrional values from whatever your ordering. How I might extend or improve this system for practical list is by changing it from movies to  
