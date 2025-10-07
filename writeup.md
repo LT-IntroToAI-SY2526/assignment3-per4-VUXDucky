@@ -20,9 +20,9 @@ Some key programming concepts I learned while completing this assignment by lear
 
 
 2. How does the overall movie chatbot system work? Explain the flow from when a user types a query to when they receive an answer.
-Basically how the movie chatbot system work by having a matching system where it matches the words it already knows, and then the _s and the %s are the prompts the user sends to the chatbot and the chatbot goes through a database to find what the user's 
+Basically how the movie chatbot system work by having a matching system where it matches the words it already knows, and then the _s and the %s are the prompts the user sends to the chatbot and the chatbot goes through a database to find what the user's prompt is asking which could the actors by title and the chat bot find the title and then sends the actors of the movie to the user.
 
 
 
 3. What are some real-world applications where this type of pattern-matching chatbot system could be useful? How might you extend or improve this system for practical use?
-One real world applications where this pattern-matching chatbot can be useful is possibly with ordering food on a kiosk for example asking the robot what are nutrional values from whatever your ordering. How I might extend or improve this system for practical list is by changing it from movies to  
+One real world applications where this pattern-matching chatbot can be useful is possibly with ordering food on a kiosk for example asking the robot what are nutrional values from whatever your ordering. How I might extend or improve this system for practical list is by changing it from movies to recommendations for food or what not and also adding more prompts the user can ask which also means increased databases.
